@@ -1,7 +1,7 @@
 {
-  "name": "unit10hw",
+  "name": "Template_Engine-week10-hw",
   "version": "1.0.0",
-  "description": "OOP and testing for week 10 homework",
+  "description": "week 10 homework",
   "main": "app.js",
   "directories": {
     "lib": "lib",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevetrilogy/unit10hw.git"
+    "url": "https://github.com/mcheung008/Template_Engine-week10-hw"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stevetrilogy/unit10hw/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/stevetrilogy/unit10hw#readme",
+  "homepage": "",
   "dependencies": {
     "inquirer": "^6.3.1"
   },
