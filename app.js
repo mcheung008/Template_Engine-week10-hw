@@ -15,6 +15,13 @@ const {
 
 const teamMembers = [];
 
+function buildTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamMembers))
+};
+
 function questionList() {
     inquirer.prompt({
         type: "list",
@@ -30,14 +37,14 @@ function questionList() {
             case "Engineer":
                 addEngineer();
                 break;
-            case "intern":
+            case "Intern":
                 addIntern();
                 break;
             case "Build Team":
                 buildTeam();
                 break;
         }
-    })
+    });
 }
 
 // Write code to use inquirer to gather information about the development team members,
@@ -70,7 +77,7 @@ function createManager() {
 
     ).then(function (answers) {
         const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
-        const managerHtml = renderManager(manager);
+        // const managerHtml = renderManager(manager);
         // console.log(answers);
         // console.log(manager);
         // console.log(managerHtml);
@@ -84,12 +91,12 @@ function createManager() {
         inquirer.prompt(
             [{
                     type: "input",
-                    message: "Please provide engineer name:",
+                    message: "Please provide engineer's name:",
                     name: "engineerName"
                 },
                 {
                     type: "input",
-                    message: "Please provide engineer id:",
+                    message: "Please provide engineer's id:",
                     name: "engineerId"
                 },
                 {
@@ -107,7 +114,7 @@ function createManager() {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithubName);
             teamMembers.push(engineer);
             questionList();
-        })
+        });
     }
 
     function createIntern() {
@@ -136,17 +143,12 @@ function createManager() {
             ]
         ).then(function (answers) {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchoolName);
-            teamMembers.push(manager);
+            teamMembers.push(intern);
             questionList();
-        })
+        });
     }
+}
 
-    function buildTeam() {
-        if (!fs.existsSync(OUTPUT_DIR)) {
-            fs.mkdirSync(OUTPUT_DIR)
-        }
-        fs.writeFileSync(outputPath, render(teamMembers))
-    };
 
     createManager();
 
@@ -168,4 +170,4 @@ function createManager() {
     // and Intern classes should all extend from a class named Employee; see the directions
     // for further information. Be sure to test out each class and verify it generates an
     // object with the correct structure and methods. This structure will be crucial in order
-    // for the provided `render` function to work! ```
+    // for the provided `render` function to work! 
