@@ -54,25 +54,25 @@ function createManager() {
     inquirer.prompt(
 
         [{
-                type: "input",
-                message: "Please provide manager name:",
-                name: "managerName",
-            },
-            {
-                type: "input",
-                message: "Please provide manager id:",
-                name: "managerId"
-            },
-            {
-                type: "input",
-                message: "Please provide manager email:",
-                name: "managerEmail"
-            },
-            {
-                type: "input",
-                message: "Please provide manager office number:",
-                name: "managerOfficeNumber"
-            }
+            type: "input",
+            message: "Please provide manager name:",
+            name: "managerName",
+        },
+        {
+            type: "input",
+            message: "Please provide manager id:",
+            name: "managerId"
+        },
+        {
+            type: "input",
+            message: "Please provide manager email:",
+            name: "managerEmail"
+        },
+        {
+            type: "input",
+            message: "Please provide manager office number:",
+            name: "managerOfficeNumber"
+        }
         ]
 
     ).then(function (answers) {
@@ -90,25 +90,25 @@ function createManager() {
 
         inquirer.prompt(
             [{
-                    type: "input",
-                    message: "Please provide engineer's name:",
-                    name: "engineerName"
-                },
-                {
-                    type: "input",
-                    message: "Please provide engineer's id:",
-                    name: "engineerId"
-                },
-                {
-                    type: "input",
-                    message: "Please provide engineer's email:",
-                    name: "engineerEmail"
-                },
-                {
-                    type: "input",
-                    message: "Please provide engineer's GitHub username:",
-                    name: "engineerGithubName"
-                }
+                type: "input",
+                message: "Please provide engineer's name:",
+                name: "engineerName"
+            },
+            {
+                type: "input",
+                message: "Please provide engineer's id:",
+                name: "engineerId"
+            },
+            {
+                type: "input",
+                message: "Please provide engineer's email:",
+                name: "engineerEmail"
+            },
+            {
+                type: "input",
+                message: "Please provide engineer's GitHub username:",
+                name: "engineerGithubName"
+            }
             ]
         ).then(function (answers) {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithubName);
@@ -121,25 +121,25 @@ function createManager() {
 
         inquirer.prompt(
             [{
-                    type: "input",
-                    message: "Please provide intern name:",
-                    name: "internName"
-                },
-                {
-                    type: "input",
-                    message: "Please provide intern id:",
-                    name: "internId"
-                },
-                {
-                    type: "input",
-                    message: "Please provide intern's email:",
-                    name: "internEmail"
-                },
-                {
-                    type: "input",
-                    message: "Please provide intern's schools name:",
-                    name: "internSchoolName"
-                }
+                type: "input",
+                message: "Please provide intern name:",
+                name: "internName"
+            },
+            {
+                type: "input",
+                message: "Please provide intern id:",
+                name: "internId"
+            },
+            {
+                type: "input",
+                message: "Please provide intern's email:",
+                name: "internEmail"
+            },
+            {
+                type: "input",
+                message: "Please provide intern's schools name:",
+                name: "internSchoolName"
+            }
             ]
         ).then(function (answers) {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchoolName);
@@ -150,7 +150,7 @@ function createManager() {
 }
 
 
-    createManager();
+createManager();
 
     // After the user has input all employees desired, call the `render` function (required
     // above) and pass in an array containing all employee objects; the `render` function will
